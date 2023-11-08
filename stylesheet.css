@@ -1,0 +1,104 @@
+:root {
+	--dark: #292C35;
+	--light: #F1F1F1;
+	--label: #111;
+    --svg: url(assets/moon.svg);
+    --svg--sun: url(assets/sun.svg)
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.dark{
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    transition: 0.6s;
+}
+
+.switch{
+    width: 235.38px;
+    height: 102px;
+    margin-top: 45vh;
+    position: relative;
+    background-color: var(--label);
+    border-radius: 59px;
+}
+
+.switch button{
+    width: 87px;
+    height: 87px;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    z-index: 1;
+    
+    top:50%;
+    transform: translateY(-50%);
+    
+    left: 60%;
+    animation: slide-button-back 0.6s forwards;
+    
+}
+.switch span{
+    display:block;
+    width: 94px;
+    height: 94px;
+    background: var(--svg) no-repeat center;
+    background-size: 100%;
+    margin-top: 3px;
+    margin-left: 4px;
+    transition: 0.2s;
+}
+
+.light{
+    background-color: var(--light);
+    display: flex;
+    justify-content: center;
+    transition: 0.6s;
+}
+
+.light button{
+    width: 87px;
+    height: 87px;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    z-index: 1;
+    top:50%;
+    transform: translateY(-50%);
+
+    animation: slide-button 0.6s forwards;
+}
+
+.light .switch span{
+    display:block;
+    width: 94px;
+    height: 94px;
+    background: var(--svg--sun) no-repeat center;
+    background-size: 100%;
+    margin-top: 3px;
+    margin-left: 60%;
+    transition: 0.2s;
+}
+
+@keyframes slide-button{
+    from{
+        left: 60%;
+    }
+    to{
+        left: 5px;
+    }
+}
+
+@keyframes slide-button-back{
+    from{
+        left: 5px;
+    }
+    to{
+        left: 60%;
+    }
+}
